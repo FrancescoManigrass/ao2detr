@@ -8,11 +8,11 @@ import warnings
 
 import mmcv
 import torch
-from mmcv import Config, DictAction
-from mmcv.runner import get_dist_info, init_dist
-from mmcv.utils import get_git_hash
+from mmengine import Config, DictAction
+from mmengine.dist import get_dist_info, init_dist
+from mmengine.utils import get_git_hash
 from mmdet import __version__
-from mmdet.apis import init_random_seed, set_random_seed
+from mmengine.runner import  set_random_seed
 
 from mmrotate.apis import train_detector
 from mmrotate.datasets import build_dataset
@@ -141,7 +141,7 @@ def main():
     logger.info(f'Config:\n{cfg.pretty_text}')
 
     # set random seeds
-    seed = init_random_seed(args.seed)
+    seed = int(args.seed)
     logger.info(f'Set random seed to {seed}, '
                 f'deterministic: {args.deterministic}')
     set_random_seed(seed, deterministic=args.deterministic)
