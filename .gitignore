@@ -1,3 +1,6 @@
 data/
 output/
 mmrotate/demo/MMRotate_Tutorial.ipynb
+mmrotate/mmrotate/core/bbox/__pycache__/
+*.pyc
+mmrotate/mmrotate/.mim/
