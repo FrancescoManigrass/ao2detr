@@ -21,7 +21,7 @@ class ReDet(RotatedTwoStageDetector):
                  test_cfg,
                  neck=None,
                  pretrained=None,
-                 init_cfg=None,device=None):
+                 init_cfg=None):
         super(ReDet, self).__init__(
             backbone=backbone,
             neck=neck,
@@ -30,4 +30,4 @@ class ReDet(RotatedTwoStageDetector):
             train_cfg=train_cfg,
             test_cfg=test_cfg,
             pretrained=pretrained,
-            init_cfg=init_cfg,device=device)
+            init_cfg=init_cfg)
