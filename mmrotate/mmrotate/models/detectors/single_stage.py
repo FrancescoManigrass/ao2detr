@@ -21,13 +21,16 @@ class RotatedSingleStageDetector(RotatedBaseDetector):
                  train_cfg=None,
                  test_cfg=None,
                  pretrained=None,
-                 init_cfg=None):
+                 init_cfg=None,
+                 device=None,
+                 ):
         super(RotatedSingleStageDetector, self).__init__(init_cfg)
         if pretrained:
             warnings.warn('DeprecationWarning: pretrained is deprecated, '
                           'please use "init_cfg" instead')
             backbone.pretrained = pretrained
         self.backbone = build_backbone(backbone)
+        self.device=device,
         if neck is not None:
             self.neck = build_neck(neck)
         bbox_head.update(train_cfg=train_cfg)

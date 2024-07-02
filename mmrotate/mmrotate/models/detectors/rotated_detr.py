@@ -22,9 +22,9 @@ class RotatedDETR(RotatedSingleStageDetector):
                  train_cfg=None,
                  test_cfg=None,
                  pretrained=None,
-                 init_cfg=None):
+                 init_cfg=None,device=None):
         super(RotatedDETR, self).__init__(backbone, None, bbox_head, train_cfg,
-                                   test_cfg, pretrained, init_cfg)
+                                   test_cfg, pretrained, init_cfg,device)
 
     # over-write `forward_dummy` because:
     # the forward of bbox_head requires img_metas

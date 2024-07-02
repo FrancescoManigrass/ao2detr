@@ -127,6 +127,7 @@ data = dict(
     workers_per_gpu=2)
 data_root = 'data/dataset_v3/'
 dataset_type = 'Datasetv3Dataset'
+device = 'cuda'
 dist_params = dict(backend='nccl')
 evaluation = dict(interval=5, metric='mAP')
 find_unused_parameters = True
@@ -260,6 +261,7 @@ model = dict(
             type='RotatedDeformableDetrTransformer'),
         type='RotatedDeformableDETRHead',
         with_box_refine=True),
+    device='cuda',
     neck=dict(
         act_cfg=None,
         in_channels=[

@@ -10,6 +10,7 @@ _base_ = [
 ]
 model = dict(
     type='RotatedDeformableDETR',
+    device='cuda',
     backbone=dict(
         type='ResNet',
         depth=50,
